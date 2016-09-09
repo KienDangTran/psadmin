@@ -3,13 +3,13 @@
  */
 
 import React from "react";
+import {Link} from "react-router";
 
 const CourseListRow = ({course}) => {
-	console.log(course);
 	return (
 		<tr>
 			<td><a href={course.watchHref}>Watch</a></td>
-			<td><a href="#">{course.title}</a></td>
+			<td><Link to={"course/" + course.id}>{course.title}</Link></td>
 			<td>{course.authorId}</td>
 			<td>{course.category}</td>
 			<td>{course.length}</td>
