@@ -1,7 +1,3 @@
-/**
- * Created by kien on 9/8/16.
- */
-
 import delay from './delay';
 
 // This file mocks a web API by working with the hard-coded data below.

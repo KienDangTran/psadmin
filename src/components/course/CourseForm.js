@@ -6,44 +6,53 @@ import React from "react";
 import TextInput from "../common/TextInput";
 import SelectInput from "../common/SelectInput";
 
-const CourseForm = ({course, allAuthors, loading, errors, onSave, onChange}) => {
+const CourseForm = ({ course, allAuthors, disabled, errors, onSave, onChange }) => {
 	return (
 		<form>
 			<h1>Manage Course</h1>
 			<TextInput
 				name="title"
 				label="Title"
-				value={course.title}
-				error={errors.title}
-				onChange={onChange}/>
+				value={ course.title }
+				error={ errors.title }
+				onChange={ onChange }
+				disabled={ disabled }
+			/>
 			<SelectInput
 				name="authorId"
 				label="Author"
-				value={course.authorId}
+				value={ course.authorId }
 				defaultOption="Select Author"
-				options={allAuthors}
-				error={errors.authorId}
-				onChange={onChange}/>
+				options={ allAuthors }
+				error={ errors.authorId }
+				onChange={ onChange }
+				disabled={ disabled }
+			/>
 			<TextInput
 				name="category"
 				label="Category"
-				value={course.category}
-				error={errors.category}
-				onChange={onChange}/>
+				value={ course.category }
+				error={ errors.category }
+				onChange={ onChange }
+				disabled={ disabled }
+			/>
 			<TextInput
 				name="length"
 				label="Length"
-				value={course.length}
-				error={errors.length}
-				onChange={onChange}/>
+				value={ course.length }
+				error={ errors.length }
+				onChange={ onChange }
+				disabled={ disabled }
+			/>
 			<input
 				type="submit"
-				disabled={loading}
-				value={loading
+				disabled={ disabled }
+				value={ disabled
 					? "Saving..."
-					: "Save"}
+					: "Save" }
 				className="btn btn-primary btn-lg"
-				onClick={onSave}/>
+				onClick={ onSave }
+			/>
 		</form>
 	);
 };
@@ -51,7 +60,7 @@ const CourseForm = ({course, allAuthors, loading, errors, onSave, onChange}) => 
 CourseForm.propTypes = {
 	course: React.PropTypes.object.isRequired,
 	allAuthors: React.PropTypes.array,
-	loading: React.PropTypes.bool,
+	disabled: React.PropTypes.bool,
 	errors: React.PropTypes.object,
 	onSave: React.PropTypes.func.isRequired,
 	onChange: React.PropTypes.func.isRequired

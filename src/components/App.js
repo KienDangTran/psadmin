@@ -1,15 +1,12 @@
-/**
- * Created by kien on 9/5/16.
- */
-
-import React, {PropTypes} from "react";
+import React from "react";
 import Header from "./common/Header";
+import { connect } from "react-redux";
 
 class App extends React.Component {
 	render() {
 		return (
 			<div className="container-fluid">
-				<Header/>
+				<Header loading={ this.props.loading }/>
 				{this.props.children}
 			</div>
 		);
@@ -17,7 +14,13 @@ class App extends React.Component {
 }
 
 App.propTypes = {
-	children: PropTypes.object.isRequired
+	children: React.PropTypes.object.isRequired,
+	loading: React.PropTypes.bool.isRequired
 };
 
-export default App;
+function mapStateToProps(state, ownProps) {
+	return {
+		loading: state.ajaxStatusReducer > 0
+	};
+}
+export default connect(mapStateToProps)(App);

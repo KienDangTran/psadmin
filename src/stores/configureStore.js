@@ -1,7 +1,3 @@
-/**
- * Created by kien on 9/6/16.
- */
-
 import {createStore, compose, applyMiddleware} from "redux";
 import rootReducer from "../reducers";
 import reduxImmutableStateInvariant from "redux-immutable-state-invariant";

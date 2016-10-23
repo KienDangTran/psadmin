@@ -1,7 +1,3 @@
-/**
- * Created by kien on 9/6/16.
- */
-
 import * as types from "../actions/actionTypes";
 import initialState from "./initialState";
 

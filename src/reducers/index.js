@@ -1,14 +1,12 @@
-/**
- * Created by kien on 9/6/16.
- */
-
-import {combineReducers} from "redux";
+import { combineReducers } from "redux";
 import courses from "./courseReducer";
 import authors from "./authorReducer";
+import ajaxStatusReducer from "./ajaxStatusReducer";
 
 const rootReducer = combineReducers({
 	courses,
-	authors
+	authors,
+	ajaxStatusReducer
 });
 
 export default rootReducer;

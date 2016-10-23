@@ -4,16 +4,19 @@
 
 import React from "react";
 
-const SelectInput = ({name, label, value, error, options, defaultOption, onChange}) => {
+const SelectInput = ({ name, label, value, error, options, defaultOption, onChange, disabled, readOnly }) => {
 	return (
 		<div className="form-group">
 			<label htmlFor={name}>{label}</label>
 			<div className="field">
 				<select
-					name={name}
-					value={value}
+					name={ name }
+					value={ value }
 					className="form-control"
-					onChange={onChange}>
+					onChange={ onChange }
+					disabled={ disabled }
+					readOnly={ readOnly }
+				>
 					<option value="">{defaultOption}</option>
 					{
 						options.map((option, index) => {
@@ -35,7 +38,9 @@ SelectInput.propTypes = {
 	error: React.PropTypes.string,
 	defaultOption: React.PropTypes.string,
 	options: React.PropTypes.arrayOf(React.PropTypes.object),
-	onChange: React.PropTypes.func.isRequired
+	onChange: React.PropTypes.func.isRequired,
+	disabled: React.PropTypes.bool,
+	readOnly: React.PropTypes.bool
 };
 
 export default SelectInput;

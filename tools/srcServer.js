@@ -1,7 +1,3 @@
-/**
- * Created by kien on 9/5/16.
- */
-
 import express from "express";
 import webpack from "webpack";
 import path from "path";

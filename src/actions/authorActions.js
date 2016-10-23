@@ -1,9 +1,6 @@
-/**
- * Created by kien on 9/9/16.
- */
-
 import * as types from "./actionTypes";
 import AuthorApi from "../api/mockAuthorApi";
+import { beginAjaxCall } from "./ajaxStatusActions";
 
 function loadAuthorsSuccess(authors) {
 	return {type: types.LOAD_AUTHORS_SUCCESS, authors};
@@ -11,6 +8,7 @@ function loadAuthorsSuccess(authors) {
 
 export function loadAuthors() {
 	return (dispatch) => {
+		dispatch(beginAjaxCall());
 		return AuthorApi.getAllAuthors().then(authors => {
 			dispatch(loadAuthorsSuccess(authors));
 		}).catch(error => {
