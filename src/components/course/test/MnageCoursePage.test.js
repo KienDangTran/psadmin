@@ -14,7 +14,7 @@ function setup() {
 			category: ""
 		},
 		authors: [],
-		actions: { saveCourse: () => { return Promise.resolve() } }
+		actions: { saveCourse: () => { return Promise.resolve(); } }
 	};
 
 	return mount(<ManageCoursePage { ...props }/>);
